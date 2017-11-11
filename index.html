@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="src/styles/css/theme.css" />
 </head>
 
-<body data-spy="scroll" data-target="#main-navbar" ng-app="myApp" ng-controller="searchCtrl" ng-init="name=contacts.name">
+<body data-spy="scroll" data-target="#main-navbar" ng-app="myApp" ng-controller="searchCtrl">
   <header>
     <nav class="navbar navbar-default navbar-fixed-top navbar-header-color" data-spy="affix" id="main-navbar">
       <div class="container">
@@ -77,18 +77,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
   <script src="node_modules/angular/angular.js"></script>
-  <script>
-    angular.module('myApp', []).controller('searchCtrl', function ($scope) {
-      $scope.contacts = [
-        { name: "Maha", age: 27 }, { name: "Medhat", age: 30 }, { name: "Shahd", age: 35 }, { name: "Medhat", age: 44 },
-        { name: "Papa", age: 20 }, { name: "Adam", age: 10 }, { name: "Roka", age: 15 }, { name: "Naglaa", age: 54 },
-        { name: "Soha", age: 84 }, { name: "Rasha", age: 55 }, { name: "Heba", age: 40 }, { name: "Mahmoud", age: 30 },
-        { name: "Yousef", age: 70 }, { name: "Mai", age: 65 }, { name: "Maha", age: 64 }, { name: "Samira", age: 85 },
-        { name: "Seham", age: 90 }, { name: "Eman", age: 100 }, { name: "Amira", age: 95 }, { name: "Hamza", age: 12 }
-      ];
-
-    });
-  </script>
+  <script src="src/scripts/app.js"></script>
 </body>
 
 </html>
