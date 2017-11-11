@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Search</title>
+  <link rel="stylesheet" href="src/styles/css/vendors.css" />
+  <link rel="stylesheet" href="src/styles/css/theme.css" />
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar" ng-app="myApp" ng-controller="searchCtrl" ng-init="name=contacts.name">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-header-color" data-spy="affix" id="main-navbar">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ex1">
+                  <span class="sr-only">this not be shown</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+            </button>
+          <div class="navbar-header-brand-color"><a href="" class="navbar-brand "><strong>Brand</strong></a></div>
+        </div>
+        <div class="collapse navbar-collapse navigation navbar-header-link-color" id="ex1">
+          <ul class="nav navbar-nav ">
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Search</a></li>
+            <li><a href="#contact">Login</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h3>This is a search for people Names and ages </h3>
+        <form action="" class="form-inline">
+          <div class="form-group">
+            <label for="" class="sr-only">type to filter</label>
+            <input type="search" name="" ng-model="name" id="searchtxt" class="form-control" placeholder="type Name to filter">
+          </div>
+        </form>
+      </div>
+      </div>
+  </section>
+  <section class="contact">
+    <div class="container">
+      <h2>
+        <table class="table table-hover ">
+          <tr class="info">
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+          <tr ng-repeat="x in contacts | filter:name">
+            <td>{{x.name }}</td>
+            <td>{{x.age}}</td>
+          </tr>
+        </table>
+      </h2>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container text-center">
+      <ul class="list-inline">
+        <li><a href="">Twiter</a></li>
+        <li><a href="">facebook</a></li>
+      </ul>
+      <p>&copy; copyright 2017.</p>
+    </div>
+  </footer>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
+  <script>
+    angular.module('myApp', []).controller('searchCtrl', function ($scope) {
+      $scope.contacts = [
+        { name: "Maha", age: 27 }, { name: "Medhat", age: 30 }, { name: "Shahd", age: 35 }, { name: "Medhat", age: 44 },
+        { name: "Papa", age: 20 }, { name: "Adam", age: 10 }, { name: "Roka", age: 15 }, { name: "Naglaa", age: 54 },
+        { name: "Soha", age: 84 }, { name: "Rasha", age: 55 }, { name: "Heba", age: 40 }, { name: "Mahmoud", age: 30 },
+        { name: "Yousef", age: 70 }, { name: "Mai", age: 65 }, { name: "Maha", age: 64 }, { name: "Samira", age: 85 },
+        { name: "Seham", age: 90 }, { name: "Eman", age: 100 }, { name: "Amira", age: 95 }, { name: "Hamza", age: 12 }
+      ];
+
+    });
+  </script>
+</body>
+
+</html>
